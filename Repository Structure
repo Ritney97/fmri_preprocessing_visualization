@@ -1,0 +1,14 @@
+fmri_preprocessing_visualization/
+│
+├── data/                   # Any input data files like .1D, .nii.gz, .csv
+│
+├── scripts/                # Python scripts for preprocessing, stats, and visualization
+│   ├── download_data.py
+│   ├── convert_to_csv.py
+│   ├── compute_stats.py
+│   └── visualize_brain.py
+│
+├── results/                # Optional: output images, graphs, or visualizations
+│
+├── README.md               # Write this in Step 5
+└── .gitignore              # Add in Step 3
