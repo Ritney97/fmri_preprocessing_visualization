@@ -6,7 +6,7 @@
 import pandas as pd
 
 # Define the specific input file and output CSV path
-input_file = "Caltech_0051456_rois_aal.1D"  # File included in the repository
+input_file = "/Users/ritneycoleman/fmri_preprocessing_visualization/data/Caltech_0051456_rois_aal.1D"  # File included in the repository
 output_file = "Caltech_0051456_rois_aal.csv"  # Desired CSV output name
 
 try:

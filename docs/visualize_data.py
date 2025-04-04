@@ -8,7 +8,7 @@ from nilearn import image, plotting
 from nilearn.masking import compute_brain_mask
 
 # Define file paths for ASD and control subjects
-asd_file_path = "Caltech_0051456_func_preproc.nii.gz"
+asd_file_path = "/Users/ritneycoleman/fmri_preprocessing_visualization/data/Caltech_0051456_func_preproc.nii.gz"
 
 # Load the fMRI data (4D)
 asd_fmri_img = nib.load(asd_file_path)
