@@ -1,0 +1,80 @@
+Functions Used in This Repository
+
+range()
+	•	Purpose: Creates a range of numbers.
+	•	Used in: convert1D_to_csv.py
+	•	Functionality: Renames column headers from default 0-based to 1-based indexing.
+pandas.read_csv()
+	•	Purpose: Reads CSV or delimited files into a pandas DataFrame.
+	•	Used in: appendstats.py, convert1D_to_csv.py, standardize.py
+	•	Functionality: Loads raw .1D or .csv data into DataFrame format for manipulation.
+
+pandas.DataFrame()
+	•	Purpose: Creates a new DataFrame.
+	•	Used in: appendstats.py
+	•	Functionality: Used to construct summary rows for mean, standard deviation, and bounds.
+
+pandas.concat()
+	•	Purpose: Combines multiple DataFrames.
+	•	Used in: appendstats.py, standardize.py
+	•	Functionality: Appends summary or standardized data back into the main DataFrame.
+
+DataFrame.mean()
+	•	Purpose: Calculates the mean of each column.
+	•	Used in: appendstats.py, standardize.py
+	•	Functionality: Computes average voxel intensity values across time.
+
+DataFrame.std()
+	•	Purpose: Calculates the standard deviation of each column.
+	•	Used in: appendstats.py, standardize.py
+	•	Functionality: Measures spread of voxel intensity values.
+
+DataFrame.insert()
+	•	Purpose: Inserts a column or row into a DataFrame.
+	•	Used in: appendstats.py
+	•	Functionality: Adds a blank or labeled column for formatting the summary rows.
+
+DataFrame.to_csv()
+	•	Purpose: Writes a DataFrame to a CSV file.
+	•	Used in: appendstats.py, convert1D_to_csv.py
+	•	Functionality: Saves the processed or newly created DataFrame (with appended stats or converted .1D data) into a .csv file format, making it accessible for future processing or visualization.
+
+astype()
+	•	Purpose: Casts data to a specific type.
+	•	Used in: standardize.py
+	•	Functionality: Ensures voxel intensity data is treated as floating point numbers.
+    
+image.mean_img()
+	•	Purpose: Reduces a 4D image to a 3D image by averaging across time.
+	•	Used in: visualize_data.py
+	•	Functionality: Converts the 4D fMRI time-series data into a single 3D volume by computing the mean across time, which is necessary before applying masks or visualization.
+
+compute_brain_mask()
+	•	Purpose: Generates a binary mask to isolate brain voxels.
+	•	Used in: visualize_data.py
+	•	Functionality: Removes non-brain elements from fMRI image.
+
+math_img()
+	•	Purpose: Performs math operations on images.
+	•	Used in: visualize_data.py
+	•	Functionality: Applies the mask to the mean image using multiplication.
+
+plotting.plot_glass_brain()
+	•	Purpose: Visualizes a 3D image as a glass brain.
+	•	Used in: visualize_data.py
+	•	Functionality: Displays thresholded voxel activity across the brain.
+
+plotting.show()
+	•	Purpose: Displays the plot window.
+	•	Used in: visualize_data.py
+	•	Functionality: Renders the brain visualization.
+
+nibabel.load()
+	•	Purpose: Loads neuroimaging data in NIfTI format.
+	•	Used in: visualize_data.py
+	•	Functionality: Opens the .nii.gz preprocessed fMRI file.
+
+numpy.mean()
+	•	Purpose: Computes the mean across an array.
+	•	Used in: visualize_data.py
+	•	Functionality: Reduces 4D fMRI data to a 3D mean image by averaging over time.

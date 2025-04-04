@@ -1,0 +1,6 @@
+# Packages used in the project
+
+pandas
+nibabal
+nilearn
+numpy

@@ -1,4 +1,8 @@
-import os
+# This is the first code used in the project after downloading the abide files. 
+# It also updates the summary statistics to become standardized along with the new values.
+# Author @Ritney Coleman
+# Date: April 4, 2025
+
 import pandas as pd
 
 # Define the specific input file and output CSV path

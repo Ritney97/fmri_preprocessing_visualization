@@ -1,5 +1,4 @@
-# This script appends summary statistics (Mean, Std Dev, Lower/Upper Bounds)
-# to a single CSV file.
+# This script appends summary statistics (Mean, Std Dev, Lower/Upper Bounds) to a single CSV file.
 # Author @Ritney Coleman
 # Date: April 4, 2025
 

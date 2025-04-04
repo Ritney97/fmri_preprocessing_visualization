@@ -1,3 +1,7 @@
+# This is the code used to standardize the values of the file. 
+# It converts the 1d file to a csv file.
+# Author @Ritney Coleman
+# Date: April 4, 2025
 
 import pandas as pd
 

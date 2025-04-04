@@ -1,3 +1,7 @@
+# This is the code used to create a visualization of the nii.gz file. 
+# Author @Ritney Coleman
+# Date: April 4, 2025
+
 import nibabel as nib
 import numpy as np
 from nilearn import image, plotting
