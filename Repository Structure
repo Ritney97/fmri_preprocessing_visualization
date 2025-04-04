@@ -1,14 +1,21 @@
 fmri_preprocessing_visualization/
 │
-├── data/                   # Any input data files like .1D, .nii.gz, .csv
+├── data/                   # Contains input files (original .1D and .nii.gz)
+│   ├── Caltech_0051456_rois_aal.1D
+│   └── Caltech_0051456_func_preproc.nii.gz
 │
-├── scripts/                # Python scripts for preprocessing, stats, and visualization
-│   ├── download_data.py
-│   ├── convert_to_csv.py
-│   ├── compute_stats.py
-│   └── visualize_brain.py
+├── results/                # Contains output files created from the code
+│   ├── Caltech_0051456_rois_aal.csv
+│   ├── Caltech_0051456_rois_aal_with_stats.csv
+│   ├── Caltech_0051456_rois_aal_standardized.csv
+│   └── output.png
 │
-├── results/                # Optional: output images, graphs, or visualizations
+├── scripts/                # Python code files
+│   ├── convert1D_to_csv.py
+│   ├── appendstats.py
+│   ├── standardize.py
+│   └── visualize_data.py
 │
-├── README.md               # Write this in Step 5
-└── .gitignore              # Add in Step 3
+├── README.md               # Overview of the project
+├── .gitignore              # Exclude temp files, system files, etc.
+└── Repository Structure.md 

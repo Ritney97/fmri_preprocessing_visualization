@@ -1,17 +1,13 @@
 # fMRI Preprocessing & Visualization
 
-This project processes and visualizes fMRI brain imaging data. It includes:
+This repository provides a step-by-step pipeline for preprocessing and visualizing fMRI data using Python. It is designed for a single subject and walks through the conversion, statistical processing, and visualization of brain imaging data.
 
-- Downloading and loading raw fMRI data
-- Converting 1D data to CSV
-- Calculating key statistics (mean, std dev, bounds)
-- Standardizing voxel intensities
-- Visualizing brain activity with masks
+## Overview
 
-All code is written in Python using `pandas`, `nilearn`, `nibabel`, and `numpy`.
+**Steps included:**
+1. Convert `.1D` data to `.csv`
+2. Append summary statistics (mean, std dev, lower & upper bounds)
+3. Standardize voxel intensities
+4. Visualize brain activity (glass brain image)
 
-## Folders
-
-- **data/**: Raw and converted datasets
-- **scripts/**: Python code for processing steps
-- **results/**: Output images and stats
+## Project Structure

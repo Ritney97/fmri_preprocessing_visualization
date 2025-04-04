@@ -1,48 +1,21 @@
 import os
 import pandas as pd
 
-# Define the input directories as a dictionary
-input_dirs = {
-    "filt_global": "/Users/ritneycoleman/Brain Imaging Data/RawData/filt_global",
-    "filt_noglobal":"/Users/ritneycoleman/Brain Imaging Data/RawData/filt_noglobal",
-    "nofilt_global": "/Users/ritneycoleman/Brain Imaging Data/RawData/nofilt_global",
-    "nofilt_noglobal": "/Users/ritneycoleman/Brain Imaging Data/RawData/nofilt_noglobal"
-}
+# Define the specific input file and output CSV path
+input_file = "Caltech_0051456_rois_aal.1D"  # File included in the repository
+output_file = "Caltech_0051456_rois_aal.csv"  # Desired CSV output name
 
-# Define the main output directory where CSVs will be stored
-output_main_dir = "/Users/ritneycoleman/Brain Imaging Data/csv_converted_data"
+try:
+    # Load the .1D file using whitespace as the delimiter
+    df = pd.read_csv(input_file, delim_whitespace=True, header=None)
 
-# Ensure the main output directory exists
-os.makedirs(output_main_dir, exist_ok=True)
+    # Rename the columns to start at 1 instead of default numbers
+    df.columns = range(1, len(df.columns) + 1)
 
-# Function to convert .1D files to .csv while preserving folder structure
-def convert_1D_to_csv(input_folder, output_folder):
-    # Ensure output subfolder exists
-    os.makedirs(output_folder, exist_ok=True)
+    # Save to CSV with headers, without index
+    df.to_csv(output_file, index=False, header=True)
 
-    for file in os.listdir(input_folder):
-        if file.endswith(".1D"):  # Only process .1D files
-            file_path = os.path.join(input_folder, file)
-            output_path = os.path.join(output_folder, file.replace(".1D", ".csv"))
+    print(f"Successfully converted {input_file} to {output_file}")
 
-            try:
-                # Load the .1D file, using whitespace as the delimiter
-                df = pd.read_csv(file_path, delim_whitespace=True, header=None)
-
-                # Rename columns starting from 1 instead of 2001, 2002, etc.
-                df.columns = range(1, len(df.columns) + 1)
-
-                # Save to CSV file without index but with headers
-                df.to_csv(output_path, index=False, header=True)
-
-                print(f"Converted {file} to {output_path}")
-
-            except Exception as e:
-                print(f"Error converting {file}: {e}")
-
-# Process each folder separately
-for folder_name, folder_path in input_dirs.items():
-    output_subfolder = os.path.join(output_main_dir, folder_name)  # Create subfolder in output dir
-    convert_1D_to_csv(folder_path, output_subfolder)
-
-print("All .1D files have been converted and saved in respective folders.")
+except Exception as e:
+    print(f"Error converting {input_file}: {e}")
